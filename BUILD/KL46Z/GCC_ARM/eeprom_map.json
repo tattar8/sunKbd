@@ -1,0 +1,87 @@
+[
+    {
+        "module": "BUILD/KL46Z", 
+        "size": {
+            ".data-delta": 15004, 
+            ".text-delta": 30, 
+            ".bss": 676, 
+            ".data": 15008, 
+            ".bss-delta": 0, 
+            ".text": 1184
+        }
+    }, 
+    {
+        "module": "[fill]", 
+        "size": {
+            ".data-delta": 4, 
+            ".text-delta": 2, 
+            ".bss": 11, 
+            ".data": 4, 
+            ".bss-delta": 0, 
+            ".text": 54
+        }
+    }, 
+    {
+        "module": "[lib]/c.a", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 89, 
+            ".data": 2472, 
+            ".bss-delta": 0, 
+            ".text": 29191
+        }
+    }, 
+    {
+        "module": "[lib]/gcc.a", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 0, 
+            ".data": 0, 
+            ".bss-delta": 0, 
+            ".text": 8660
+        }
+    }, 
+    {
+        "module": "[lib]/mbed.a", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 197, 
+            ".data": 8, 
+            ".bss-delta": 0, 
+            ".text": 5462
+        }
+    }, 
+    {
+        "module": "[lib]/misc", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 28, 
+            ".data": 12, 
+            ".bss-delta": 0, 
+            ".text": 220
+        }
+    }, 
+    {
+        "module": "mbed/e95d10626187", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 59, 
+            ".data": 264, 
+            ".bss-delta": 0, 
+            ".text": 5932
+        }
+    }, 
+    {
+        "summary": {
+            "static_ram": 18828, 
+            "total_flash_delta": 15040, 
+            "static_ram_delta": 15008, 
+            "total_flash": 68471
+        }
+    }
+]

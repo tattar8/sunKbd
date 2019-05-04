@@ -1,0 +1,87 @@
+Maskable ISR at 0xFFFE
+
+0195   48         PHA               Push ACC
+0196   98         TYA               ACC = Y
+0197   48         PHA               Push ACC
+0198   8A         TXA               ACC = X
+0199   48         PHA               Push ACC
+019A   AD 01 02   LDA $0201         ACC = *0201
+019D   F0 0F      BEQ $01AE         if ACC == 0 branch to 01AE 
+019F   AD 01 34   LDA $3401         ACC = *3401 
+01A2   8D 6B 00   STA $006B         *006B = ACC
+01A5   AD 01 24   LDA $2401         ACC = *2401
+01A8   AD 01 2C   LDA $2C01         ACC = *2C01
+01AB   4C DD 81   JMP $81DD         PC = 81DD (1DD)
+01AE   AD 01 34   LDA $3401         ACC = *3401
+01B1   10 11      BPL $01C4         if ACC>0 PC =1C4
+01B3   AA         TAX               X=ACC
+01B4   29 08      AND #$08          ACC&=8
+01B6   D0 06      BNE $01BE         if ACC != 0 PC=01BE
+01B8   20 61 A8   JSR $A861         Jump to subr at A861 (2861)
+01BB   4C DA 81   JMP $81DA         PC = 1DA
+01BE   20 DA A7   JSR $A7DA         Jump to subr at A7DA (27DA)
+01C1   4C EC 81   JMP $81EC         effectively return from ISR
+01C4   AD 01 24   LDA $2401         ACC=*2401
+01C7   10 06      BPL $01CF         if ACC>0 PC=1CF
+01C9   20 96 91   JSR $9196         Jump to subr at 9196 (1196)
+01CC   4C EC 81   JMP $81EC         effectively return from ISR
+01CF   AD 01 2C   LDA $2C01         ACC=*2C01
+01D2   10 03      BPL $01D7         if ACC>0 PC=1D7
+01D4   20 D0 91   JSR $91D0         Jump to subr at 91D0 (11D0)
+01D7   4C EC 81   JMP $81EC         effectively return from ISR
+01DA   20 59 82   JSR $8259         Jump to subr at 8259 (259)
+01DD   E6 01      INC $01            *01++
+01DF   A5 00      LDA $00            ACC = *00 (null??)
+01E1   10 09      BPL $01EC          if ACC>0 return
+01E3   85 09      STA $09           *9=ACC
+01E5   20 F2 81   JSR $81F2         Jump to subr at 81F2 (1F2)
+01E8   A9 00      LDA #$00          ACC = 0
+01EA   85 09      STA $09           *9=0
+01EC   68         PLA               Get ready to return
+01ED   AA         TAX
+01EE   68         PLA
+01EF   A8         TAY
+01F0   68         PLA
+01F1   40         RTI
+
+
+NMI at 0xFFFA
+
+3A71   48         PHA               Push registers
+3A72   8A         TXA
+3A73   48         PHA
+3A74   98         TYA
+3A75   48         PHA
+3A76   EE 00 00   INC $0000         *0++
+3A79   A5 8A      LDA $8A           A=*8A
+3A7B   D0 58      BNE $3AD5         if A!= 0 PC=3AD5
+3A7D   A5 8B      LDA $8B           A=*8B
+3A7F   D0 3B      BNE $3ABC         if A!= 0 PC=3ABC
+3A81   AD BD 05   LDA $05BD         A=*05BD
+3A84   F0 05      BEQ $3A8B         if A!= 0 PC=3A8B
+3A86   CE BD 05   DEC $05BD         *05BD--
+3A89   D0 20      BNE $3AAB         if *05BD != 0 PC=3AAB
+3A8B   AC BF 05   LDY $05BF         Y=*05BF
+3A8E   B9 D0 05   LDA $05D0,Y       A=*5DO+Y
+3A91   F0 18      BEQ $3AAB         if A==0 PC=3AAB
+3A93   8D BD 05   STA $05BD         
+3A96   B9 C0 05   LDA $05C0,Y
+3A99   8D 00 40   STA $4000
+3A9C   A9 00      LDA #$00
+3A9E   8D 07 3C   STA $3C07
+3AA1   99 D0 05   STA $05D0,Y
+3AA4   C8         INY
+3AA5   98         TYA
+3AA6   29 0F      AND #$0F
+3AA8   8D BF 05   STA $05BF
+3AAB   E6 99      INC $99
+3AAD   A5 B1      LDA $B1
+3AAF   8D 00 3C   STA $3C00
+3AB2   4A         LSR A
+3AB3   8D 01 3C   STA $3C01
+3AB6   68         PLA
+3AB7   A8         TAY
+3AB8   68         PLA
+3AB9   AA         TAX
+3ABA   68         PLA
+3ABB   40         RTI

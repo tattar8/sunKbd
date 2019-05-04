@@ -1,0 +1,87 @@
+[
+    {
+        "module": "BUILD/NUCLEO_F031K6", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 4, 
+            ".bss": 176, 
+            ".data": 4, 
+            ".bss-delta": 0, 
+            ".text": 1452
+        }
+    }, 
+    {
+        "module": "[fill]", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 11, 
+            ".data": 0, 
+            ".bss-delta": 0, 
+            ".text": 42
+        }
+    }, 
+    {
+        "module": "[lib]/c_nano.a", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 12, 
+            ".data": 100, 
+            ".bss-delta": 0, 
+            ".text": 4882
+        }
+    }, 
+    {
+        "module": "[lib]/gcc.a", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 0, 
+            ".data": 0, 
+            ".bss-delta": 0, 
+            ".text": 4444
+        }
+    }, 
+    {
+        "module": "[lib]/mbed.a", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 185, 
+            ".data": 4, 
+            ".bss-delta": 0, 
+            ".text": 3145
+        }
+    }, 
+    {
+        "module": "[lib]/misc", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 28, 
+            ".data": 12, 
+            ".bss-delta": 0, 
+            ".text": 220
+        }
+    }, 
+    {
+        "module": "mbed/e95d10626187", 
+        "size": {
+            ".data-delta": 0, 
+            ".text-delta": 0, 
+            ".bss": 312, 
+            ".data": 264, 
+            ".bss-delta": 0, 
+            ".text": 9392
+        }
+    }, 
+    {
+        "summary": {
+            "static_ram": 1108, 
+            "total_flash_delta": 4, 
+            "static_ram_delta": 0, 
+            "total_flash": 23961
+        }
+    }
+]
