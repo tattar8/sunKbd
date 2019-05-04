@@ -8,20 +8,34 @@ This project automatically responds to certain commands from the Sun host, namel
 This project targets the Freescale/NXP KL46Z Freedom board, using two of its hardware UARTs.
 #### Usage
 This project encodes ASCII letters received over UART0 (9600, 8N1) into the corresponding scancodes and outputs them over UART1.  For special keys, the following bytes can be sent:
+
 0x80 - Up arrow
+
 0x81 - Down arrow
+
 0x82 - Left arrow
+
 0x83 - Right arrow
+
 0x84 - Esc
+
 0x85 - Alt
+
 0x86 - Opt
+
 0x87 - Control
+
 0x88-0x93 - F1-F12
+
 0x94 - Shift
 
 The following are special cases used where the break code isn't automatically sent (to facilitate key combinations):
+
 0x96 - Control Press
+
 0x97 - Control Release
+
 0x98 - Stop Press
+
 0x99 - Stop Release
 
